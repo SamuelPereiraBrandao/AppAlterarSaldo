@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <script src="./vue.js"></script>
+
+    <title>exibirSaldo</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v if simples-->
+        <button @click="exibirSaldo = !exibirSaldo">
+           <span v-if="!exibirSaldo">Exibir Saldo</span> 
+           <span v-if="exibirSaldo">Ocultar Saldo</span> 
+        </button> <!-- toggle -->
+        <p>Saldo: <span v-if="exibirSaldo">R$ {{ saldo }}</span></p>
+        <h2>Alterar:</h2>
+        <input type="text" :placeholder="placeholde" id="valor">
+        <br>
+        <br>
+        <button @click="creditar()">Creditar</button>
+        <button @click="debitar()">Debitar</button>
+        <hr>
+
+
+    </div>
+    <script>
+                const vm = new Vue({
+            el: '#app', // id
+            data:{
+                saldo: 4570.17,
+                exibirSaldo: false,
+                placeholde:'Digite o valor:'
+            },
+            methods: {
+                debitar(){
+                    this.saldo -= parseFloat(valor.value);
+                },
+                creditar(){
+                    this.saldo += parseFloat(valor.value);
+                }
+            }})
+    </script>
+</body>
+</html>
