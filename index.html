@@ -12,18 +12,22 @@
 <body>
     <div id="app">
         <!-- v if simples-->
-        <button @click="exibirSaldo = !exibirSaldo">
+        <div class="exibirsaldo">
+            <button @click="exibirSaldo = !exibirSaldo">
            <span v-if="!exibirSaldo">Exibir Saldo</span> 
            <span v-if="exibirSaldo">Ocultar Saldo</span> 
         </button> <!-- toggle -->
         <p>Saldo: <span v-if="exibirSaldo">R$ {{ saldo }}</span></p>
-        <h2>Alterar:</h2>
+        </div>
+        <div class="alterarsaldo">
+             <h2>Alterar:</h2>
         <input type="text" :placeholder="placeholde" id="valor">
         <br>
         <br>
         <button @click="creditar()">Creditar</button>
         <button @click="debitar()">Debitar</button>
-        <hr>
+        </div>
+       
 
 
     </div>
