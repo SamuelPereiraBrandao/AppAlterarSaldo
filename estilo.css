@@ -6,6 +6,7 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #app{
+    grid-column-gap: 25px;
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -33,7 +34,7 @@ input{
     border: 2px solid;
     padding: 10px;
     border-radius: 10px;
-    margin-right: 10%;
+ 
 }
 .alterarsaldo{
     border: 2px solid;
